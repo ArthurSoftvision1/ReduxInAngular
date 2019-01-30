@@ -4,7 +4,7 @@ import { IAppState } from '../store';
 import { REMOVE_ALL_TODOS } from '../actions';
 
 @Component({
-  selector: 'app-todo-overwiew',
+  selector: 'app-todo-overview',
   templateUrl: './todo-overwiew.component.html',
   styleUrls: ['./todo-overwiew.component.css']
 })
