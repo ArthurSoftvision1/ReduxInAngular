@@ -7,11 +7,13 @@ import { IAppState, rootReducer, INITIAL_STATE } from './store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoOverwiewComponent } from './todo-overwiew/todo-overwiew.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoOverwiewComponent
+    TodoOverwiewComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
