@@ -21,5 +21,4 @@ export class TodoOverwiewComponent implements OnInit {
   clearTodos() {
     this.ngRedux.dispatch({type: REMOVE_ALL_TODOS});
   }
-
 }

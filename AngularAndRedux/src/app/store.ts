@@ -41,7 +41,7 @@ export function rootReducer(state, action) {
                 todos: [],
                 lastUpdate: new Date
             })
-
     }
+    
     return state;
 }

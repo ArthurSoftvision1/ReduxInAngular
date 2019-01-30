@@ -1,5 +1,6 @@
 <h6>Create Todo:</h6>
-<form (ngSubmit)="onSubmit()" #todoForm="ngForm">
+
+<form (ngSubmit)="onSubmit()">
   <div class="form-row">
     <div class="col-auto">
       <input 
@@ -8,8 +9,7 @@
         placeholder="Description" 
         id="description" 
         [(ngModel)]="model.description" 
-        name="description" 
-        #description="ngModel">
+        name="description">
     </div>
     <div class="col-auto">
         <input 
@@ -18,27 +18,25 @@
           placeholder="Responsible" 
           id="responsible" 
           [(ngModel)]="model.responsible" 
-          name="responsible" 
-          #responsible="ngModel">
+          name="responsible">
       </div>
       <div class="col-auto">
         <select 
           class="form-control" 
           id="priority" 
           [(ngModel)]="model.priority" 
-          name="priority" 
-          #priority="ngModel">
+          name="priority">
           <option value="low">Low</option>
           <option value="medium">Medium</option>
           <option value="high">High</option>
         </select>
       </div>
-
       <div class="col-auto">
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
   </div>
 </form>
+
 <h6>Todos List:</h6>
 <div *ngIf="(todos | async)?.length!=0">
   <table class="table">
