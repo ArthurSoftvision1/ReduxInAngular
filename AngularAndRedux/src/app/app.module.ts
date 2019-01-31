@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoOverwiewComponent } from './todo-overwiew/todo-overwiew.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,12 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     BrowserModule,
     AppRoutingModule,
     NgReduxModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forRoot({ rootReducer }),
+    StoreDevtoolsModule.instrument({
+      monitor: rootReducer,
+      maxAge: 5
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

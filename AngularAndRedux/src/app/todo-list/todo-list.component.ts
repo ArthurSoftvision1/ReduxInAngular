@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgRedux, select } from '@angular-redux/store';
 import { IAppState } from '../store';
-import { ADD_TODO, REMOVE_TODO, TOGGLE_TODO } from '../actions';
+import { ActionTypes } from '../actions';
 import { ITodo } from '../todo';
 
 @Component({
@@ -27,14 +27,14 @@ export class TodoListComponent implements OnInit {
   }
 
   onSubmit() {
-    this.ngRedux.dispatch({type: ADD_TODO, todo: this.model})
+    this.ngRedux.dispatch({type: ActionTypes.ADD_TODO, todo: this.model})
   }
 
   toggleTodo(todo) {
-    this.ngRedux.dispatch({type: TOGGLE_TODO, id: todo.id})
+    this.ngRedux.dispatch({type: ActionTypes.TOGGLE_TODO, id: todo.id})
   }
 
   removeTodo(todo) {
-    this.ngRedux.dispatch({type: REMOVE_TODO, id: todo.id})
+    this.ngRedux.dispatch({type: ActionTypes.REMOVE_TODO, id: todo.id})
   }
 }
